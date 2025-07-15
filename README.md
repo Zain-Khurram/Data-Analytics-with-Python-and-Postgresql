@@ -82,14 +82,14 @@ The 'sql quieries' script performs the following key analyses:
 
 7. **Average Products Per Order by City**: Calculates the average number of products in an order, grouped by customer city.
 
-8.** Revenue Contribution by Product Category**: Determines the percentage of total revenue contributed by each product category, ranked by sales.
+8. **Revenue Contribution by Product Category**: Determines the percentage of total revenue contributed by each product category, ranked by sales.
 
 9. **Price-Purchase Correlation**: Identifies the correlation between product price and the number of times a product has been purchased.
 
-10.** Seller Revenue Ranking**: Ranks sellers based on their total revenue generated.
+10. **Seller Revenue Ranking**: Ranks sellers based on their total revenue generated.
 
 11. **Cumulative Sales Per Month**: Calculates the running total of sales each month for every year.
 
-12.** Year-over-Year Sales Growth**: Computes the year-over-year growth rate of total sales.
+12. **Year-over-Year Sales Growth**: Computes the year-over-year growth rate of total sales.
 
 13. **Top 3 Customers by Spending (Yearly)**: Identifies and visualizes the top 3 customers who spent the most money each year.
