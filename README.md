@@ -36,12 +36,14 @@ Also make sure your PostgreSQL server is running and you have a database configu
 
 This project uses environment variables for sensitive information like database credentials and file paths. Create a .env file in the root directory of your project and add the following variables:
 
+```env
 CSV_FILE_PATH='path/to/your/folder'   # Default: n/a
-DB_HOST='your_db_host'                            # Default: 'localhost'
-DB_NAME='your_db_name'                            # Default: 'postgres'
-DB_USER='your_db_user'                            # Default: 'postgres'
-DB_PASSWORD='your_db_password'                    # Default: n/a
-DB_PORT='your_db_port'                            # Default: '5432'
+DB_HOST='your_db_host'                # Default: 'localhost'
+DB_NAME='your_db_name'                # Default: 'postgres'
+DB_USER='your_db_user'                # Default: 'postgres'
+DB_PASSWORD='your_db_password'        # Default: n/a
+DB_PORT='your_db_port'                # Default: '5432'
+```
 
 Replace the placeholder values with your actual database credentials and the absolute path to your CSV files. 
 
