@@ -16,25 +16,27 @@ Getting Started
 Follow these steps to set up and run the project locally.
 
 ## Dependencies
-Before you begin, ensure you have the following installed:
+Before you begin, ensure you have the following dependencies installed:
 
-- Python 3.x
-- PostgreSQL
+- pandas
+- psycopg2
+- matplotlib
+- seaborn
+- numpy
 
 pip (Python package installer)
 
 You can install these dependencies using pip:
 ```Bash
-pip install pandas psycopg2-binary
-```
-
 pip install pandas psycopg2-binary matplotlib seaborn numpy
+```
+Also make sure your PostgreSQL server is running and you have a database configured.
 
 ## Configuration
 
 This project uses environment variables for sensitive information like database credentials and file paths. Create a .env file in the root directory of your project and add the following variables:
 
-CSV_FILE_PATH='path/to/your/e-Commerce Dataset'   # Default: n/a
+CSV_FILE_PATH='path/to/your/folder'   # Default: n/a
 DB_HOST='your_db_host'                            # Default: 'localhost'
 DB_NAME='your_db_name'                            # Default: 'postgres'
 DB_USER='your_db_user'                            # Default: 'postgres'
@@ -46,60 +48,46 @@ Replace the placeholder values with your actual database credentials and the abs
 If these environment variables are not set, the script will use the default values specified in the code. Some default values are not present and environnment variables for these must be set
 
 ## Usage
-Place your CSV files: Ensure your e-commerce CSV files (e.g., customers.csv, orders.csv, sellers.csv, products.csv, geolocation.csv, payments.csv, order_items.csv) are located in the directory specified by CSV_FOLDER_PATH in your .env file.
+Place your CSV files: Ensure your e-commerce CSV files (e.g., customers.csv, orders.csv, sellers.csv, products.csv, geolocation.csv, payments.csv, order_items.csv) are located a folder and the folder is in the directory specified by CSV_FOLDER_PATH in your .env file.
 
-Run the data loading script: This script will connect to your PostgreSQL database, create/truncate tables, and insert the data from your CSV files.
+- First Script 
+1.  **Set up your PostgreSQL database:** Ensure you have a PostgreSQL server running and accessible.
+2.  **Create a `.env` file** (as described in the Configuration section) or ensure the default values in the script are correct for your setup.
+3.  **Place your CSV file** at the location specified by `CSV_FILE_PATH`. The CSV file is expected is to be `orders.csv`
+4.  **Run the the first script:**
+    ```bash
+    python "csv to sql"
+    ```
+The script will connect to the database, process the CSV data, and load it onto postgresql
 
-Bash
+- Second Script
+5. 
 
-python data_loader.py # Assuming your data loading script is named data_loader.py
-Run the analysis script: This script will execute the SQL queries and generate visualizations.
+## Analysis Performed
+The 'sql quieries' script performs the following key analyses:
 
-Bash
+1. Unique Customer Cities: Lists all distinct cities where customers are located.
 
-python analysis.py # Assuming your analysis script is named analysis.py
-Data Source
-The project uses a simulated or real-world e-commerce dataset, typically consisting of the following CSV files:
+2. Order Count in 2017: Counts the total number of orders placed in the year 2017.
 
-customers.csv: Information about customers.
+3. Total Sales Per Category: Calculates the sum of sales for each product category.
 
-orders.csv: Details about orders placed.
+4. Percentage of Installment Orders: Determines the percentage of orders paid for in installments.
 
-sellers.csv: Information about sellers.
+5. Customer Count by State: Visualizes the distribution of customers across different states.
 
-products.csv: Product details.
+6. Orders Per Month (2018): Shows the number of orders placed each month in 2018.
 
-geolocation.csv: Geolocation data.
+7. Average Products Per Order by City: Calculates the average number of products in an order, grouped by customer city.
 
-payments.csv: Payment information for orders.
+8. Revenue Contribution by Product Category: Determines the percentage of total revenue contributed by each product category, ranked by sales.
 
-order_items.csv: Details of items within each order.
+9. Price-Purchase Correlation: Identifies the correlation between product price and the number of times a product has been purchased.
 
-Analysis Performed
-The analysis.py script performs the following key analyses:
+10. Seller Revenue Ranking: Ranks sellers based on their total revenue generated.
 
-Unique Customer Cities: Lists all distinct cities where customers are located.
+11. Cumulative Sales Per Month: Calculates the running total of sales each month for every year.
 
-Order Count in 2017: Counts the total number of orders placed in the year 2017.
+12. Year-over-Year Sales Growth: Computes the year-over-year growth rate of total sales.
 
-Total Sales Per Category: Calculates the sum of sales for each product category.
-
-Percentage of Installment Orders: Determines the percentage of orders paid for in installments.
-
-Customer Count by State: Visualizes the distribution of customers across different states.
-
-Orders Per Month (2018): Shows the number of orders placed each month in 2018.
-
-Average Products Per Order by City: Calculates the average number of products in an order, grouped by customer city.
-
-Revenue Contribution by Product Category: Determines the percentage of total revenue contributed by each product category, ranked by sales.
-
-Price-Purchase Correlation: Identifies the correlation between product price and the number of times a product has been purchased.
-
-Seller Revenue Ranking: Ranks sellers based on their total revenue generated.
-
-Cumulative Sales Per Month: Calculates the running total of sales each month for every year.
-
-Year-over-Year Sales Growth: Computes the year-over-year growth rate of total sales.
-
-Top 3 Customers by Spending (Yearly): Identifies and visualizes the top 3 customers who spent the most money each year.
+13. Top 3 Customers by Spending (Yearly): Identifies and visualizes the top 3 customers who spent the most money each year.
