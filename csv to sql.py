@@ -4,8 +4,7 @@ import psycopg2.extras as extras
 import os
 from pathlib import Path
 
-
-base_dir = Path('C:/Users/mini/Desktop/vscode_python/Python-Project/e-Commerce Dataset')
+base_dir = Path(os.getenv('CSV_FOLDER_PATH'))
 csv_files = (
     base_dir / 'customers.csv',
     base_dir / 'orders.csv',
@@ -16,18 +15,14 @@ csv_files = (
     base_dir / 'order_items.csv',
     )
 
-
 conn = pg.connect(
-    host='localhost',
-    database='postgres',
-    user='postgres',
-    password='anwar103',
-    port='5432'
-)
-
+    host=os.getenv('DB_HOST', 'localhost'),
+    database=os.getenv('DB_NAME', 'postgres'),
+    user=os.getenv('DB_USER', 'postgres'),
+    password=os.getenv('DB_PASSWORD'),
+    port=os.getenv('DB_PORT', '5432')
 
 cursor = conn.cursor()
-
 
 #function that checks true or false if a table exists in the database
 def table_exists_psycopg2(conn, table_name):
