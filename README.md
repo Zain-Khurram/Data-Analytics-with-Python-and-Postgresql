@@ -1,84 +1,51 @@
 # Data-Analytics-with-Python-and-Postgresql
 
-E-commerce Data Analysis with PostgreSQL and Python
 This project focuses on analyzing e-commerce data using PostgreSQL for data storage and querying, and Python with libraries like Pandas, Psycopg2, Matplotlib, and Seaborn for data manipulation, analysis, and visualization.
 
-Table of Contents
-Project Overview
-
-Features
-
-Getting Started
-
-Prerequisites
-
-Installation
-
-Environment Variables
-
-Usage
-
-Data Source
-
-Analysis Performed
-
-Contributing
-
-License
-
-Project Overview
 This repository contains scripts to load e-commerce CSV data into a PostgreSQL database and perform various analytical queries to gain insights into customer behavior, sales trends, and product performance. The project demonstrates a common workflow for data analysis, from data ingestion to generating visualizations.
 
-Features
-Automated Data Loading: Python script to read CSV files and automatically create/truncate tables in PostgreSQL, then insert data.
+## Features
 
-Dynamic Table Creation: Automatically infers PostgreSQL data types from Pandas DataFrames for table creation.
-
-Robust Error Handling: Includes error handling for database operations to ensure data integrity.
-
-Comprehensive Data Analysis: Executes a series of SQL queries to extract meaningful insights from the e-commerce dataset.
-
-Data Visualization: Utilizes Matplotlib and Seaborn to visualize key findings, such as customer distribution by state and monthly order trends.
+- Automated Data Loading: Python script to read CSV files and automatically create/truncate tables in PostgreSQL, then insert data.
+- Dynamic Table Creation: Automatically infers PostgreSQL data types from Pandas DataFrames for table creation.
+- Robust Error Handling: Includes error handling for database operations to ensure data integrity.
+- Comprehensive Data Analysis: Executes a series of SQL queries to extract meaningful insights from the e-commerce dataset.
+- Data Visualization: Utilizes Matplotlib and Seaborn to visualize key findings, such as customer distribution by state and monthly order trends.
 
 Getting Started
 Follow these steps to set up and run the project locally.
 
-Prerequisites
+## Dependencies
 Before you begin, ensure you have the following installed:
 
-Python 3.x
-
-PostgreSQL
+- Python 3.x
+- PostgreSQL
 
 pip (Python package installer)
 
-Installation
-Clone the repository:
-
-Bash
-
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
-Install Python dependencies:
-
-Bash
+You can install these dependencies using pip:
+```Bash
+pip install pandas psycopg2-binary
+```
 
 pip install pandas psycopg2-binary matplotlib seaborn numpy
-Set up your PostgreSQL database:
-Make sure your PostgreSQL server is running and you have a database configured.
 
-Environment Variables
+## Configuration
+
 This project uses environment variables for sensitive information like database credentials and file paths. Create a .env file in the root directory of your project and add the following variables:
 
-DB_HOST=localhost
-DB_NAME=postgres
-DB_USER=postgres
-DB_PASSWORD=your_db_password
-DB_PORT=5432
-CSV_FOLDER_PATH=/path/to/your/csv/files
-Replace the placeholder values with your actual database credentials and the absolute path to your CSV files.
+CSV_FILE_PATH='path/to/your/e-Commerce Dataset'   # Default: n/a
+DB_HOST='your_db_host'                            # Default: 'localhost'
+DB_NAME='your_db_name'                            # Default: 'postgres'
+DB_USER='your_db_user'                            # Default: 'postgres'
+DB_PASSWORD='your_db_password'                    # Default: n/a
+DB_PORT='your_db_port'                            # Default: '5432'
 
-Usage
+Replace the placeholder values with your actual database credentials and the absolute path to your CSV files. 
+
+If these environment variables are not set, the script will use the default values specified in the code. Some default values are not present and environnment variables for these must be set
+
+## Usage
 Place your CSV files: Ensure your e-commerce CSV files (e.g., customers.csv, orders.csv, sellers.csv, products.csv, geolocation.csv, payments.csv, order_items.csv) are located in the directory specified by CSV_FOLDER_PATH in your .env file.
 
 Run the data loading script: This script will connect to your PostgreSQL database, create/truncate tables, and insert the data from your CSV files.
