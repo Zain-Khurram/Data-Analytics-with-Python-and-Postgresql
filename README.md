@@ -63,7 +63,7 @@ Place your CSV files: Ensure your e-commerce CSV files (e.g., customers.csv, ord
 The script will connect to the database, process the CSV data, and load it onto postgresql
 
 - Second Script
-5. 
+5. **Run** each question seperatley to view the results of each query 
 
 ## Analysis Performed
 The 'sql quieries' script performs the following key analyses:
