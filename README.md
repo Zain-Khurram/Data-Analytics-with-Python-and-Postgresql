@@ -68,28 +68,28 @@ The script will connect to the database, process the CSV data, and load it onto 
 ## Analysis Performed
 The 'sql quieries' script performs the following key analyses:
 
-1. Unique Customer Cities: Lists all distinct cities where customers are located.
+1. **Unique Customer Cities**: Lists all distinct cities where customers are located.
 
-2. Order Count in 2017: Counts the total number of orders placed in the year 2017.
+2. **Order Count in 2017**: Counts the total number of orders placed in the year 2017.
 
-3. Total Sales Per Category: Calculates the sum of sales for each product category.
+3. **Total Sales Per Category**: Calculates the sum of sales for each product category.
 
-4. Percentage of Installment Orders: Determines the percentage of orders paid for in installments.
+4. **Percentage of Installment Orders**: Determines the percentage of orders paid for in installments.
 
-5. Customer Count by State: Visualizes the distribution of customers across different states.
+5. **Customer Count by State**: Visualizes the distribution of customers across different states.
 
-6. Orders Per Month (2018): Shows the number of orders placed each month in 2018.
+6. **Orders Per Month (2018)**: Shows the number of orders placed each month in 2018.
 
-7. Average Products Per Order by City: Calculates the average number of products in an order, grouped by customer city.
+7. **Average Products Per Order by City**: Calculates the average number of products in an order, grouped by customer city.
 
-8. Revenue Contribution by Product Category: Determines the percentage of total revenue contributed by each product category, ranked by sales.
+8.** Revenue Contribution by Product Category**: Determines the percentage of total revenue contributed by each product category, ranked by sales.
 
-9. Price-Purchase Correlation: Identifies the correlation between product price and the number of times a product has been purchased.
+9. **Price-Purchase Correlation**: Identifies the correlation between product price and the number of times a product has been purchased.
 
-10. Seller Revenue Ranking: Ranks sellers based on their total revenue generated.
+10.** Seller Revenue Ranking**: Ranks sellers based on their total revenue generated.
 
-11. Cumulative Sales Per Month: Calculates the running total of sales each month for every year.
+11. **Cumulative Sales Per Month**: Calculates the running total of sales each month for every year.
 
-12. Year-over-Year Sales Growth: Computes the year-over-year growth rate of total sales.
+12.** Year-over-Year Sales Growth**: Computes the year-over-year growth rate of total sales.
 
-13. Top 3 Customers by Spending (Yearly): Identifies and visualizes the top 3 customers who spent the most money each year.
+13. **Top 3 Customers by Spending (Yearly)**: Identifies and visualizes the top 3 customers who spent the most money each year.
