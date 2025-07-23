@@ -3,6 +3,9 @@ import psycopg2 as pg
 import psycopg2.extras as extras
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 base_dir = Path(os.getenv('CSV_FOLDER_PATH'))
 csv_files = (
@@ -22,7 +25,6 @@ conn = pg.connect(
     password=os.getenv('DB_PASSWORD'),
     port=os.getenv('DB_PORT', '5432')
 )
-
 cursor = conn.cursor()
 
 #function that checks true or false if a table exists in the database
